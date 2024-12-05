@@ -1,0 +1,17 @@
+<template>
+    <!--Shyam Changes-->
+    <lightning-datatable
+        key-field="id"
+        data={accounts}
+        columns={columns}
+        onrowselection={handleSelectRow}
+        show-row-number-column
+    ></lightning-datatable>
+    <h2>Accounts Selected:</h2> 
+    <ul>
+        <li for:each={selectedRows} for:item="row" key={row.Id}>
+            <p>{row.Name} - {row.Id}</p>
+        </li>
+    </ul>
+    <lightning-button variant="brand" label="Update Record" title="titleName" onclick={handleClick}></lightning-button>
+</template>
