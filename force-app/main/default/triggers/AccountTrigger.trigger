@@ -1,4 +1,4 @@
-trigger AccountTrigger on Account (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
+trigger AccountTrigger on Account (before insert, before update) {
     if (Org_Specific_Setting__mdt.getInstance('Run_All_Triggers')?.Value__c == true) {
         TriggerHandler handler = new AccountTriggerHandler(Trigger.isExecuting, Trigger.size);
         switch on Trigger.operationType {
